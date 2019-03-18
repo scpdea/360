@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<html>	
+<title>DEMO: zoomin coffee</title>
+<title>Otto Burman</title> 
+<link rel="icon" 
+      type="image/png" 
+      href="/myimages/omakuva1.png">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour</title>
+    <link rel="stylesheet" href="pannellum.css"/>
+    <script type="text/javascript" src="pannellum.js"></script>
+    <style>
+    #panorama {
+        width: 600px;
+        height: 400px;
+    }
+    </style>
+</head>
+<body>
+
+<div id="panorama"></div>
+<script>
+pannellum.viewer('panorama', {   
+    "default": {
+        "firstScene": "pictstart",
+        "author": "Otto Burman & Nelli Koponen",
+		"autoLoad": true,
+        "sceneFadeDuration": 1000
+	},
+    "scenes": {
+        "pictstart": {
+            "title": "Start Point to the coffee place",		
+           /* "hfov": 110, "pitch": -3, "yaw": 117, */		
+            "type": "equirectangular",
+            "panorama": "kahvila01.jpg",
+		// make next as a commnet when in production
+        "hotSpotDebug": true,	  
+		"hotSpots": [
+                {
+                    "pitch": 15,
+                    "yaw": -14,
+                    "type": "scene",
+                    "text": "first step towards the coffee house",
+                    "sceneId": "firsttarget"
+                },
+				{
+					"pitch": 13,
+					"yaw": 105,
+					"type": "info",
+					"text": "Hämeentie 78",
+				  /*  "URL": "http://ottoburman.fi/" */
+				}				
+        ]
+        },
+
+        "firsttarget": {
+            "title": "do the second step",
+            //change the starting point
+			"hfov": 110, "yaw": 5,
+            "type": "equirectangular",
+            "panorama": "kahvila02.jpg",
+			"hotSpotDebug": true,	  
+            "hotSpots": [
+                {
+                    "pitch": 7,
+                    "yaw": -25,
+                    "type": "scene",
+                    "text": "get in here...",
+                    "sceneId": "inside",
+                    "targetYaw": 160,
+                    "targetPitch": 11
+                }
+            ]
+        },
+	"inside": {
+            "title": "finally inside the shop",
+            /* "hfov": 110, "yaw": 5, */
+            "type": "equirectangular",
+            "panorama": "kahvila03.jpg",
+		"hotSpotDebug": true,	  
+            "hotSpots": [
+                {
+                    "pitch": 2,
+                    "yaw": -32,
+                    "type": "scene",
+                    "text": "EXIT",
+                    "sceneId": "pictstart",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                },
+				 {
+                    "pitch": 5,
+                    "yaw": -174,
+                    "type": "scene",
+                    "text": "order here, please ",
+                    "sceneId": "inside2",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                }
+            ]
+    },
+	"inside2": {
+            "title": "order here",
+            "hfov": 110,
+            "yaw": 5,
+            "type": "equirectangular",
+            "panorama": "kahvila04.jpg",
+			"autoRotate": 3,
+		"hotSpotDebug": true,	  
+            "hotSpots": [
+                {
+                    "pitch": -4,
+                    "yaw": -4,
+                    "type": "scene",
+                    "text": "EXIT",
+                    "sceneId": "pictstart",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                },
+								{
+					"pitch": 11,
+					"yaw": -135,
+					"type": "info",
+					"text": "Price list",
+				  /*  "URL": "http://ottoburman.fi/" */
+				}	
+            ]
+    }
+	
+	} /* scenes ending */
+});
+</script>
+
+</body>
+</html>
+
+<!-----------------------------------------------------------------
+Select by clicking the picture! <br>
+ 	<a href="3dpict00.php" target="_blank" >	
+	<img src="kahvila01.jpg" height="100" width="200"></img> </a>
+ 	<a href="3dpict01.php" target="_blank" >	
+	<img src="kahvila01.jpg" height="100" width="200"></img> </a>
+	 	<a href="3dpict01.php" target="_blank" >	
+	<img src="kahvila02.jpg" height="100" width="200"></img> </a>
+ 	<a href="3dpict01.php" target="_blank" >	
+	<img src="kahvila03.jpg" height="100" width="200"></img> </a>
+ 	<a href="3dpict01.php" target="_blank" >	
+	<img src="kahvila04.jpg" height="100" width="200"></img> </a>
+	<br>
+----------->
+<br> Päijänteentie 1, Helsinki; kuvat Otto Burman
+<br> <a href="..\copyr.txt"> Pannellum is licenced under MIT <br> </a>
+
+
+</body>
+</html>
